@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family:Arial;
+  }
+  
+body{
+    background: url('img/planta.jpg');
+    background-size: cover;
+    height: 100px;
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.625);
+    padding: 20px;
+    border-bottom: mediumblue;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.wrapper .title h1{
+    color: #ffffff;
+    font-size: 40px;
+    font-family: fantasy;
+    text-align: center;
+    box-shadow: 0 10px rgba(255, 255, 255, 0.51);
+}
+
+.contact-form{
+    display:contents;
+}
+
+.input-fields{
+    display: flex;
+}
+
+.input-fields,
+.msg{
+    text-align: center;
+    left: 50%;
+}
+
+.input-fields .input,
+.msg textarea{
+    margin: 25px 0;
+    background: transparent;
+    text-align: center;
+    border: 0px;
+    padding: 0px;
+    color: #ffffff;
+    width: 100%;
+    box-shadow: 0 10px rgba(255, 255, 255, 0.51);
+}
+  
+.btn {
+    background: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}

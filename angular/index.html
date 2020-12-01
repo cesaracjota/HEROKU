@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="MainApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Contactos</title>
+    <link rel="stylesheet" href="styles.CSS">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script src="nucleo.js"></script>
+</head>
+<body ng-controller="controladorPrincipal">
+<div class="wrapper">
+  <div class="title">
+    <h1>CONTACTOS REGISTRADOS > {{ areas.length }}</h1>
+  </div>
+  <div class="contact-form">
+    <div class="input-fields">
+      <table class="input">
+        <tr>
+            <td style="color: rgb(255, 238, 1);">NOMBRE</td>
+            <td style="color: rgb(255, 238, 1);">APELLIDOS</td>
+            <td style="color: rgb(255, 238, 1);">CORREO</td>
+            <td style="color: rgb(255, 238, 1);">CELULAR</td>
+        </tr>
+        <tr ng-repeat="area in areas" ng-click="selectArea(area)">
+            <td>{{area.Nombre }}</td>
+            <td>{{area.Apellidos }}</td>
+            <td>{{area.Correo }}</td>
+            <td>{{area.Celular }}</td>
+        </tr>
+    </table>
+     
+    </div>
+    <div class="msg">
+      <form action="myForm" class="ng-pristine ng-invalid ng-invalid-required">
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="newArea.Nombre" required>
+            <br>
+            <input type="text" class="form-control input-lg text-center" placeholder="Apellidos" ng-model="newArea.Apellidos" required>
+            <br>
+            <input type="text" class="form-control input-lg text-center" placeholder="Correo" ng-model="newArea.Correo" required>
+            <br>
+            <input type="text" class="form-control input-lg text-center" placeholder="Celular" ng-model="newArea.Celular" required>
+            <br>
+        </div>
+        <div class="botones">
+        <button type="submit" class="btn btn-success btn-lg" ng-click="registrarArea()" ng-disabled="!newArea.Nombre || !newArea.Apellidos || !newArea.Correo || || !newArea.Celular ||  !selected">Agregar</button>
+        <button type="submit" class="btn btn-warning btn-lg" ng-click="modificarArea(newArea)" ng-disabled="!newArea.Nombre || !newArea.Apellidos || !newArea.Correo || || !newArea.Celular || !selected">Modificar</button>
+        <button type="submit" class="btn btn-danger btn-lg" ng-click="borrarArea(newArea)" ng-disabled="!newArea.Nombre || !newArea.Apellidos || !newArea.Correo || || !newArea.Celular || !selected">Eliminar</button>
+        </div>
+    </form>
+    <h4 style="text-align: end; color: white;"> Autor: Cesar Acjota</h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>
